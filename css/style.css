@@ -1,0 +1,313 @@
+/**-------Category--------*/
+/**
+* Reset
+* Colour
+* Mixin
+* Typography
+* Global
+* Components
+*/
+/**-------Reset--------*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  color: gray;
+  font-style: none;
+}
+
+/**-------Colour--------*/
+/**-------Mixin--------*/
+/**-------Typography--------*/
+body {
+  font-family: "Montserrat", sans-serif, Helvetica, Arial;
+  font-size: 15px;
+  font-weight: 700;
+  color: #6d708d;
+}
+
+/**-------Global--------*/
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-image: url(../images/bg-bottom.svg), url(../images/bg-top.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: -5% 120%, right top;
+  background-color: #f6f6fe;
+}
+
+.wrapper {
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn {
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(90deg, #a3a8f0, #696fdd);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 16px 100px;
+  color: #f6f6fe;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif, Helvetica, Arial;
+  font-weight: 700;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+  background: transparent;
+  border: 1px solid #696fdd;
+  color: #696fdd;
+}
+
+.btn.btn-recommend {
+  color: #696fdd;
+  background: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn.btn-recommend:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/**-------Components--------*/
+.header {
+  text-align: center;
+}
+
+.header .title {
+  padding: 40px 0;
+}
+
+.header .plans {
+  display: inline-block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.header .plans_annually,
+.header .plans_monthly {
+  vertical-align: middle;
+  color: #b3b5c6;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.header label.plans_toggle {
+  display: inline-block;
+  vertical-align: middle;
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  margin: 0 32px;
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(90deg, #a3a8f0, #696fdd);
+  background-size: 200% 100%;
+  background-position: right;
+  cursor: pointer;
+}
+
+.header label.plans_toggle:before {
+  content: "";
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  background-color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.header input {
+  display: none;
+}
+
+.header input:checked + .plans_toggle::before {
+  left: 44px;
+}
+
+.header input:checked + .plans_toggle {
+  background-position: left;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card {
+    margin: 16px 0;
+  }
+}
+
+.card {
+  padding: 32px;
+  -webkit-box-shadow: 0 5px 10px rgba(73, 76, 95, 0.1);
+          box-shadow: 0 5px 10px rgba(73, 76, 95, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.card .price-monthly {
+  display: none;
+}
+
+.card.card-recommend {
+  -webkit-box-shadow: 0 3px 7px rgba(73, 76, 95, 0.6);
+          box-shadow: 0 3px 7px rgba(73, 76, 95, 0.6);
+  background: linear-gradient(160deg, #a3a8f0 -10%, #696fdd 95%);
+  z-index: 2;
+}
+
+.card.card-recommend .title,
+.card.card-recommend .price-monthly,
+.card.card-recommend .price-annually,
+.card.card-recommend .features {
+  color: #f6f6fe;
+}
+
+@media (min-width: 768px) {
+  .basic,
+  .professional,
+  .master {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .card-recommend {
+    padding: 60px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card .basic,
+  .card .professional,
+  .card .master {
+    height: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.price-monthly,
+.price-annually {
+  font-size: 60px;
+  line-height: 100px;
+  color: #494c5f;
+}
+
+.price-monthly span:nth-child(1),
+.price-annually span:nth-child(1) {
+  font-size: 32px;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 8px;
+}
+
+.features {
+  width: 100%;
+}
+
+.features li {
+  text-align: center;
+  display: block;
+  border-top: 1px solid rgba(179, 181, 198, 0.8);
+  padding: 16px 0;
+}
+
+.footer {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-top: 48px;
+  padding: 16px;
+  text-align: center;
+}
+
+.attribution {
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: #3e52a3;
+}
+/*# sourceMappingURL=style.css.map */
