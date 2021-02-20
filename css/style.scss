@@ -256,3 +256,8 @@ body {
   text-decoration: none;
   color: hsl(228, 45%, 44%);
 }
+
+@media(max-width:768px){
+  .footer{
+  margin-top:0px;}
+}
